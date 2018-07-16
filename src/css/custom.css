@@ -50,7 +50,7 @@
 
 .github-corner svg {
   z-index: 9999;
-  fill: gray;
+  fill: black;
   color: #fff
 }
 
@@ -136,3 +136,37 @@
 .device-mockup.samsung_tv.landscape > .device > .screen {
   top: 2.148803%; bottom: 12.817127%; left: 1.261956%; right: 1.361956%;
 }
+
+
+section.contact ul.list-social li.social-github a {
+  background-color: #1da1f2;
+}
+section.contact ul.list-social li.social-github a:hover {
+  background-color: #0d95e8;
+}
+
+section.contact ul.list-social li.social-instagram a {
+  background-color: #1da1f2;
+}
+section.contact ul.list-social li.social-instagram a:hover {
+  background-color: #0d95e8;
+}
+
+section.contact ul.list-social li.social-whatsapp a {
+  background-color: #1da1f2;
+}
+section.contact ul.list-social li.social-whatsapp a:hover {
+  background-color: #0d95e8;
+  opacity: 0.4;
+}
+
+section.contact ul.list-social li.social-email a {
+  background-color: #1da1f2;
+}
+section.contact ul.list-social li.social-email a:hover {
+  background-color: #0d95e8;
+}
+
+
+
+

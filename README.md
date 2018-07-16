@@ -1,28 +1,28 @@
-# [Start Bootstrap - New Age](https://startbootstrap.com/template-overviews/new-age/)
+# [RODRIGO3D.COM](https://rodrigo3d.com)
 
-[New Age](http://startbootstrap.com/template-overviews/new-age/) is a web app landing page theme for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/).
+[Bare](http://startbootstrap.com/template-overviews/bare/) é um modelo HTML inicial para o [Bootstrap](http://getbootstrap.com/) criado por [Start Bootstrap](http://startbootstrap.com/). Esse modelo apresenta caminhos de arquivo predefinidos para Bootstrap e jQuery, para que você possa criar rapidamente sites do Bootstrap.
 
-## Preview
+#
 
-[![New Age Preview](https://startbootstrap.com/assets/img/templates/new-age.jpg)](https://blackrockdigital.github.io/startbootstrap-new-age/)
+[![Bare Preview](screenshot.png)](https://rodrigo3d.github.io/)
 
-**[View Live Preview](https://blackrockdigital.github.io/startbootstrap-new-age/)**
+**[Visualização ao vivo](https://rodrigo3d.com)**
 
 ## Status
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/BlackrockDigital/startbootstrap-new-age/master/LICENSE)
-[![npm version](https://img.shields.io/npm/v/startbootstrap-new-age.svg)](https://www.npmjs.com/package/startbootstrap-new-age)
-[![Build Status](https://travis-ci.org/BlackrockDigital/startbootstrap-new-age.svg?branch=master)](https://travis-ci.org/BlackrockDigital/startbootstrap-new-age)
-[![dependencies Status](https://david-dm.org/BlackrockDigital/startbootstrap-new-age/status.svg)](https://david-dm.org/BlackrockDigital/startbootstrap-new-age)
-[![devDependencies Status](https://david-dm.org/BlackrockDigital/startbootstrap-new-age/dev-status.svg)](https://david-dm.org/BlackrockDigital/startbootstrap-new-age?type=dev)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/rodrigo3d/rodrigo3d.com/master/LICENSE.md)
+[![npm version](https://img.shields.io/badge/npm-v5.6.0-blue.svg)](https://www.npmjs.com/~rodrigo3d)
+[![Build Status](https://img.shields.io/badge/build-passing-green.svg)]()
+[![dependencies Status](https://img.shields.io/badge/dependencies-up%20to%20date-green.svg)]()
+[![devDependencies Status](https://img.shields.io/badge/devDependencies-up%20to%20date-green.svg)]()
 
 ## Download and Installation
 
 To begin using this template, choose one of the following options to get started:
-* [Download the latest release on Start Bootstrap](https://startbootstrap.com/template-overviews/new-age/)
-* Install via npm: `npm i startbootstrap-new-age`
-* Clone the repo: `git clone https://github.com/BlackrockDigital/startbootstrap-new-age.git`
-* [Fork, Clone, or Download on GitHub](https://github.com/BlackrockDigital/startbootstrap-new-age)
+* [Download the latest release on Start Bootstrap](https://startbootstrap.com/template-overviews/bare/)
+* Install via npm: `npm i startbootstrap-bare`
+* Clone the repo: `git clone https://github.com/BlackrockDigital/startbootstrap-bare.git`
+* [Fork, Clone, or Download on GitHub](https://github.com/BlackrockDigital/startbootstrap-bare)
 
 ## Usage
 
@@ -34,27 +34,15 @@ After downloading, simply edit the HTML and CSS files included with the template
 
 After installation, run `npm install` and then run `gulp dev` which will open up a preview of the template in your default browser, watch for changes to core template files, and live reload the browser when changes are saved. You can view the `gulpfile.js` to see which tasks are included with the dev environment.
 
-#### Gulp Tasks
-
-- `gulp` the default task that builds everything
-- `gulp dev` browserSync opens the project in your default browser and live reloads when changes are made
-- `gulp css` compiles SCSS files into CSS and minifies the compiled CSS
-- `gulp js` minifies the themes JS file
-- `gulp vendor` copies dependencies from node_modules to the vendor directory
-
-You must have npm and Gulp installed globally on your machine in order to use these features.
-
-## Troubleshooting and Help
-
-Start Bootstrap has a public Slack channel which is a great place to ask questions about this template and all things related to Start Bootstrap.
-
-**[Click here to join the Slack channel!](https://startbootstrap-slack.herokuapp.com/)**
-
 ## Bugs and Issues
 
-Have a bug or an issue with this template? [Open a new issue](https://github.com/BlackrockDigital/startbootstrap-new-age/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](http://startbootstrap.com/template-overviews/new-age/).
+Have a bug or an issue with this template? [Open a new issue](https://github.com/BlackrockDigital/startbootstrap-bare/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](http://startbootstrap.com/template-overviews/bare/).
 
-## About
+## Custom Builds
+
+You can hire Start Bootstrap to create a custom build of any template, or create something from scratch using Bootstrap. For more information, visit the **[custom design services page](https://startbootstrap.com/bootstrap-design-services/)**.
+
+## Sobre
 
 Start Bootstrap is an open source library of free Bootstrap templates and themes. All of the free templates and themes on Start Bootstrap are released under the MIT license, which means you can use them for any purpose, even for commercial projects.
 
@@ -69,6 +57,6 @@ Start Bootstrap was created by and is maintained by **[David Miller](http://davi
 
 Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
 
-## Copyright and License
+## Direitos Autorais e Licença
 
-Copyright 2013-2018 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-new-age/blob/gh-pages/LICENSE) license.
+Copyright 2013-2018 RODRIGO3D.COM. Código liberado sob o [MIT](https://github.com/rodrigo3d/rodrigo3d.com/blob/master/LICENSE.md) license.
