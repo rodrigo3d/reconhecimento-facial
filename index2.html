@@ -8,13 +8,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Title -->
-  <title><%= title %></title>
+  <title>RODRIGO3D.COM - Reconhecimento Facial</title>
   <meta name="author" content="Rodrigo Ribeiro - me@rodrigo3d.com" />
   <meta name="generator" content="Jekyll v{{ jekyll.version }}" />
-  <meta name="description" content="<%= description %>" />
+  <meta name="description" content="" />
 
   <!-- Android Lolipop Theme Color -->
-  <meta name="theme-color" content="#000" />
+  <meta name="theme-color" content="{{ site.lolipop-theme-color }}" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/img/icons/favicon.png" />
@@ -29,16 +29,40 @@
   <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css" />
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/assets/vendor/font-awesome/css/font-awesome.min.css" />
 
   <!-- Custom styles for this template -->
   <!-- Theme Style -->
-  <link rel="stylesheet" href="assets/css/theme.min.css" />
+  <link rel="stylesheet" href="assets/css/new-age.min.css" />
   <link rel="stylesheet" href="assets/css/custom.min.css" />
 
-
+  <script src="assets/vendor/tracking/tracking-min.js"></script>
+  <script src="assets/vendor/tracking/data/face-min.js"></script>
+  <script src="assets/vendor/tracking/data/eye-min.js"></script>
+  <script src="assets/vendor/tracking/data/mouth-min.js"></script>
 
   <style>
+  .rect {
+    border: 2px solid #a64ceb;
+    left: -1000px;
+    position: absolute;
+    top: -1000px;
+  }
+  #img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -173px 0 0 -300px;
+  }
+  .bg-primary {
+    background: #fdcc52;
+    background: -webkit-linear-gradient(#fdcc52, #fdc539);
+    background: linear-gradient(#fdcc52, #fdc539);
+  }
+
+
+
+
 
 </style>
 
@@ -89,121 +113,118 @@
             <h4 class="mb-5">
               Reconhecimento Facial com JavaScript!
             </h4>
-            <ul class="nav ml-auto">
+
+            <ul class="nav ml-auto--">
               <li class="nav-item">
-                <a class="nav-link" href="mouth"><i class="fa fa-arrow-right"></i> Boca</a>
+                <a class="nav-link" href="mouth">Boca</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="face"><i class="fa fa-arrow-right"></i> Rosto</a>
+                <a class="nav-link" href="face">Rosto</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="eye"><i class="fa fa-arrow-right"></i> Olhos</a>
+                <a class="nav-link" href="eye">Olhos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="clear"><i class="fa fa-eraser"></i> Limpar</a>
+                <a class="nav-link" href="clear">Limpar</a>
               </li>
             </ul>
+
             <a href="#download" class="btn btn-outline btn-xl js-scroll-trigger">Start Now for Free!</a>
           </div>
         </div>
         <div class="col-7 my-auto">
           <div class="device-container-">
             <div class="device-mockup samsung_tv">
-              <div class="device">
-                <div class="screen demo-container">
-                  <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                  <img id="img" src="assets/img/faces.jpg" class="img-fluid" alt="Imagem" />
-                </div>
-                <div class="button">
-                  <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+              <!--<div class="device-mockup iphone6_plus portrait white">-->
+                <div class="device">
+                  <div class="screen demo-container">
+                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+                    <img id="img" src="https://trackingjs.com/bower/tracking.js/examples/assets/faces.jpg" class="img-fluid" alt="">
+                  </div>
+                  <div class="button">
+                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <section class="contact bg-primary text-center" id="contact">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8 mx-auto">
-          <h2 class="section-heading">Reconhecimento Facial com JavaScript!</h2>
-          <p>&nbsp;</p>
-          <ul class="list-inline list-social">
-            <li class="list-inline-item social-github">
-              <a href="https://github.com/rodrigo3d" target="_blank">
-                <i class="fa fa-github"></i>
-              </a>
-            </li>
-            <li class="list-inline-item social-twitter">
-              <a href="https://twitter.com/rodrigo3dapp" target="_blank">
-                <i class="fa fa-twitter"></i>
-              </a>
-            </li>
-            <li class="list-inline-item social-instagram">
-              <a href="https://www.instagram.com/rodrigo3dapp/" target="_blank">
-                <i class="fa fa-instagram"></i>
-              </a>
-            </li>
-            <li class="list-inline-item social-whatsapp">
-              <a href="javascript:alert('Em desenvolvimento!');">
-                <i class="fa fa-whatsapp"></i>
-              </a>
-            </li>
-            <li class="list-inline-item social-email">
-              <a href="mailto:me@rodrigo3d.com">
-                <i class="fa fa-envelope-o"></i>
-              </a>
-            </li>
-          </ul>
+    <section class="contact bg-primary text-center" id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 mx-auto">
+            <h2 class="section-heading">Discover what all the buzz is about!</h2>
+            <p>Our app is available on any mobile device! Download now to get started!</p>
+            <ul class="list-inline list-social">
+              <li class="list-inline-item social-github">
+                <a href="https://github.com/rodrigo3d" target="_blank">
+                  <i class="fa fa-github"></i>
+                </a>
+              </li>
+              <li class="list-inline-item social-twitter">
+                <a href="https://twitter.com/rodrigo3dapp" target="_blank">
+                  <i class="fa fa-twitter"></i>
+                </a>
+              </li>
+              <li class="list-inline-item social-instagram">
+                <a href="https://www.instagram.com/rodrigo3dapp/" target="_blank">
+                  <i class="fa fa-instagram"></i>
+                </a>
+              </li>
+              <li class="list-inline-item social-whatsapp">
+                <a href="javascript:alert('Em desenvolvimento!');">
+                  <i class="fa fa-whatsapp"></i>
+                </a>
+              </li>
+              <li class="list-inline-item social-email">
+                <a href="mailto:me@rodrigo3d.com">
+                  <i class="fa fa-envelope-o"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <footer>
-    <div class="container">
-      <p>&copy; <a href="http://rodrigo3d.com">RODRIGO3D.COM</a> 2018. Todos os direitos reservados.</p>
-      <ul class="list-inline">
-        <li class="list-inline-item">
-          <a href="http://rodrigo3d.com/privacy">Privacy</a>
-        </li>
-        <li class="list-inline-item">
-          <a href="http://rodrigo3d.com/terms">Terms</a>
-        </li>
-      </ul>
-    </div>
-  </footer>
+    <footer>
+      <div class="container">
+        <p>&copy; <a href="http://rodrigo3d.com">RODRIGO3D.COM</a> 2018. Todos os direitos reservados.</p>
+        <ul class="list-inline">
+          <li class="list-inline-item">
+            <a href="http://rodrigo3d.com/privacy">Privacy</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="http://rodrigo3d.com/terms">Terms</a>
+          </li>
+        </ul>
+      </div>
+    </footer>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="assets/vendor/jquery/jquery.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Plugin JavaScript -->
-  <script src="assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="assets/vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  <!-- Plugin tracking.js -->
-  <script src="assets/vendor/tracking/tracking-min.js"></script>
-  <script src="assets/vendor/tracking/data/face-min.js"></script>
-  <script src="assets/vendor/tracking/data/eye-min.js"></script>
-  <script src="assets/vendor/tracking/data/mouth-min.js"></script>
+    <!-- Custom scripts for this template -->
+    <script src="assets/js/new-age.min.js"></script>
+    <script src="assets/js/app.min.js"></script>
 
-  <!-- Custom scripts for this template -->
-  <script src="assets/js/new-age.min.js"></script>
-  <script src="assets/js/app.min.js"></script>
+    <script>
 
-  <script>
+      $(function () {
 
-    $(function () {
+       App.init ();
 
-     App.init ();
+     });
 
-   });
+   </script>
 
- </script>
+ </body>
 
-</body>
-
-</html>
+ </html>

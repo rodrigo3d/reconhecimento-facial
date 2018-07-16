@@ -6,15 +6,16 @@ var browserSync   = require('browser-sync').create();
 var gulp          = require('gulp');
 var del           = require('del');
 var cleanCSS      = require('gulp-clean-css');
+var concat        = require('gulp-concat');
 var header        = require('gulp-header');
+var htmlmin       = require('gulp-htmlmin');
 var imagemin      = require('gulp-imagemin');
 var rename        = require("gulp-rename");
-var sass          = require('gulp-sass');
+var template      = require('gulp-template');
 var uglify        = require('gulp-uglify');
 var runSequence   = require('run-sequence');
 
 var pkg           = require('./package.json');
-
 // Set the banner content
 var banner = ['/*!\n',
 ' * Start Bootstrap - <%= pkg.title %> v<%= pkg.version %> (<%= pkg.homepage %>)\n',
@@ -23,6 +24,71 @@ var banner = ['/*!\n',
 ' */\n',
 ''
 ].join('');
+
+
+// Gulp task to minify css files
+gulp.task('css:theme', function(){
+  return gulp.src(['./src/css/theme.css'])
+  .pipe(cleanCSS())
+  .pipe(rename({suffix: '.min'}))
+  .pipe(header(banner, {pkg: pkg}))
+  .pipe(browserSync.stream())
+  .pipe(gulp.dest('./_site/assets/css/'));
+});
+// Gulp task to minify css files
+gulp.task('css:custom', function(){
+  return gulp.src(['./src/css/custom/**/*.css'])
+  .pipe(concat('custom.css'))
+  .pipe(cleanCSS())
+  .pipe(rename({suffix: '.min'}))
+  .pipe(header(banner, {pkg: pkg}))
+  .pipe(browserSync.stream())
+  .pipe(gulp.dest('./_site/assets/css/'));
+});
+// CSS
+gulp.task('css', ['css:theme', 'css:custom']);
+
+
+// Minify JavaScript
+gulp.task('js:minify', function() {
+  return gulp.src(['./src/js/*.js', '!./src/js/*.min.js'])
+  .pipe(uglify())
+  .pipe(rename({ suffix: '.min' }))
+  .pipe(header(banner, {pkg: pkg}))
+  .pipe(browserSync.stream())
+  .pipe(gulp.dest('./_site/assets/js/'));
+});
+// JS
+gulp.task('js', ['js:minify']);
+
+
+// Gulp task to minify image files
+gulp.task('img:minify', function() {
+  return gulp.src(['./src/img/**/*.{gif,jpg,jpeg,png,svg,ico}', '!./src/img/**/*.fw.png'])
+  .pipe(imagemin({optimizationLevel: 5, progressive: true, interlaced: true}))
+  .pipe(browserSync.stream())
+  .pipe(gulp.dest('./_site/assets/img/'));
+});
+// IMAGES
+gulp.task('img', ['img:minify']);
+
+
+// Gulp task to compile and minify html files
+gulp.task('html:compile', function() {
+  gulp.src('index.html')
+  .pipe(template({
+    title: pkg.title,
+    description: pkg.description
+  }))
+  .pipe(gulp.dest('./_site/'));
+});
+gulp.task('html:minify', function() {
+  gulp.src('index.html')
+  .pipe(htmlmin({collapseWhitespace: true}))
+  .pipe(gulp.dest('./_site/'));
+});
+gulp.task('html', ['html:compile']);
+
 
 // Copy third party libraries from /node_modules into /vendor
 gulp.task('vendor', function() {
@@ -33,7 +99,7 @@ gulp.task('vendor', function() {
     '!./node_modules/bootstrap/dist/css/bootstrap-grid*',
     '!./node_modules/bootstrap/dist/css/bootstrap-reboot*'
     ])
-  .pipe(gulp.dest('./assets/vendor/bootstrap'))
+  .pipe(gulp.dest('./_site/assets/vendor/bootstrap'))
 
   // Font Awesome
   gulp.src([
@@ -43,102 +109,35 @@ gulp.task('vendor', function() {
     '!./node_modules/font-awesome/.*',
     '!./node_modules/font-awesome/*.{txt,json,md}'
     ])
-  .pipe(gulp.dest('./assets/vendor/font-awesome'))
+  .pipe(gulp.dest('./_site/assets/vendor/font-awesome'))
 
   // jQuery
   gulp.src([
     './node_modules/jquery/dist/*',
     '!./node_modules/jquery/dist/core.js'
     ])
-  .pipe(gulp.dest('./assets/vendor/jquery'))
+  .pipe(gulp.dest('./_site/assets/vendor/jquery'))
 
   // jQuery Easing
   gulp.src([
     './node_modules/jquery.easing/*.js'
     ])
-  .pipe(gulp.dest('./assets/vendor/jquery-easing'))
-
-  // Simple Line Icons
-  gulp.src([
-    './node_modules/simple-line-icons/fonts/**',
-    ])
-  .pipe(gulp.dest('./assets/vendor/simple-line-icons/fonts'))
-
-  gulp.src([
-    './node_modules/simple-line-icons/css/**',
-    ])
-  .pipe(gulp.dest('./assets/vendor/simple-line-icons/css'))
+  .pipe(gulp.dest('./_site/assets/vendor/jquery-easing'))
 
   // tracking.js
   gulp.src([
     './node_modules/tracking/build/**'
     ])
-  .pipe(gulp.dest('./assets/vendor/tracking'))
-
-  // device-mockups
-  gulp.src([
-    './src/device-mockups/**'
-    ])
-  .pipe(gulp.dest('./assets/device-mockups'))
+  .pipe(gulp.dest('./_site/assets/vendor/tracking'))
 
 });
-
-// Compile SCSS
-gulp.task('css:compile', function() {
-  return gulp.src('./src/scss/**/*.scss')
-  .pipe(sass.sync({
-    outputStyle: 'expanded'
-  }).on('error', sass.logError))
-  .pipe(gulp.dest('./assets/css'))
-});
-
-// Minify CSS
-gulp.task('css:minify', ['css:compile'], function() {
-  return gulp.src([
-    './src/css/*.css',
-    '!./src/css/*.min.css'
-    ])
-  .pipe(cleanCSS())
-  .pipe(rename({ suffix: '.min' }))
-  .pipe(header(banner, {pkg: pkg}))
-  .pipe(gulp.dest('./assets/css'));
-});
-
-// CSS
-gulp.task('css', ['css:compile', 'css:minify']);
-
-// Minify JavaScript
-gulp.task('js:minify', function() {
-  return gulp.src([
-    './src/js/*.js',
-    '!./src/js/*.min.js'
-    ])
-  .pipe(uglify())
-  .pipe(rename({ suffix: '.min' }))
-  .pipe(header(banner, {pkg: pkg}))
-  .pipe(gulp.dest('./assets/js'));
-});
-
-// JS
-gulp.task('js', ['js:minify']);
-
-// Gulp task to minify image files
-gulp.task('img:minify', function() {
-  return gulp.src(['./src/img/**/*.{gif,jpg,jpeg,png,svg,ico}', '!./src/img/**/*.fw.png'])
-  .pipe(imagemin({optimizationLevel: 5, progressive: true, interlaced: true}))
-  .pipe(gulp.dest('./assets/img/'));
-});
-
-// JS
-gulp.task('img', ['img:minify']);
-
 
 
 // Configure the browserSync task
 gulp.task('browserSync', function() {
   browserSync.init({
     server: {
-      baseDir: "./"
+      baseDir: "./_site", directory: false,  index: "index.html"
     }
   });
 });
@@ -146,16 +145,17 @@ gulp.task('browserSync', function() {
 // Clean output directory
 gulp.task('clean', function () {
   return del([
-    './assets'
+    './assets', './_site'
     ]);
 });
 
 // Watch all files for changes & recompile
 //Watch all files, run jekyll & reload BrowserSync
 gulp.task('watch', function () {
-  gulp.watch('./src/scss/*.scss', ['css']);
+  gulp.watch('./src/css/**/*.css', ['css:theme', 'css:custom']);
   gulp.watch('./src/js/*.js', ['js']);
   gulp.watch('./*.html', browserSync.reload);
+  gulp.watch('./_site/**/.html', browserSync.reload);
 });
 
 // Gulp task to default all files
@@ -164,9 +164,10 @@ gulp.task('default', ['clean'], function () {
     'css',
     'js',
     'img',
+    'html',
     'vendor',
     'browserSync',
-    'watch',
+    'watch'
     );
 });
 

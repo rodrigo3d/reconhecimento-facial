@@ -30,142 +30,30 @@
  *
  *
  */
- /* Cor original do logo react = #61DAFB */
- .navbar-brand-logo {
-  animation: navbar-brand-logo-spin infinite 20s linear;
-  height: 28px;
-  background-color: transparent;
-  vertical-align: ;
-}
 
-@keyframes navbar-brand-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-/* github-corner-css */
-.github-corner:hover .octo-arm {
-  animation: octocat-wave .56s ease-in-out
-}
-
-.github-corner svg {
-  z-index: 9999;
-  fill: black;
-  color: #fff
-}
-
-.github-corner:hover svg {
-  z-index: 9999;
-  fill: #337ab7
-}
-
-@keyframes octocat-wave {
-  0%,
-  to {
-    transform: rotate(0deg)
-  }
-  20%,
-  60% {
-    transform: rotate(-25deg)
-  }
-  40%,
-  80% {
-    transform: rotate(10deg)
-  }
-}
-
-@media (max-width:500px) {
-  .github-corner:hover .octo-arm {
-    animation: none
-  }
-  .github-corner .octo-arm {
-    animation: octocat-wave .56s ease-in-out
-  }
-}
-/* GENERAL STYLE */
-
-.device-mockup {
-  position: relative;
-  width: 100%;
-  padding-bottom: 61.775701%;
-}
-
-.device-mockup > .device {
+ .rect {
+  border: 2px solid #a64ceb;
+  left: -1000px;
   position: absolute;
-  top: 0; bottom: 0; left: 0; right: 0;
-  width: 100%; height: 100%;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-image: url("/assets/img/macbook.png");
+  top: -1000px;
 }
 
-.device-mockup > .device > .screen {
+#img {
   position: absolute;
-  top:    11.0438729%;
-  bottom: 14.6747352%;
-  left:   13.364486%;
-  right:  13.364486%;
-  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  margin: -173px 0 0 -300px;
 }
-
-.device-mockup > .device > .button {
-  position: absolute;
-  top: 0; left: 0;
-  display: none;
-  overflow: hidden;
-  border-radius: 100%;
-  -webkit-border-radius: 100%;
-  -moz-border-radius: 100%;
-  cursor: pointer;
+.bg-primary {
+  background: #fdcc52;
+  background: -webkit-linear-gradient(#fdcc52, #fdc539);
+  background: linear-gradient(#fdcc52, #fdc539);
 }
 
 
-/* DEVICES */
-/* Samsung TV */
-.device-mockup.samsung_tv,
-.device-mockup.samsung_tv.landscape {
-  padding-bottom: 64.68%;
-}
-
-.device-mockup.samsung_tv > .device,
-.device-mockup.samsung_tv.landscape > .device {
-  background-image: url("/assets/img/samsung_tv.png");
-}
-
-.device-mockup.samsung_tv > .device > .screen,
-.device-mockup.samsung_tv.landscape > .device > .screen {
-  top: 2.148803%; bottom: 12.817127%; left: 1.261956%; right: 1.361956%;
-}
 
 
-section.contact ul.list-social li.social-github a {
-  background-color: #1da1f2;
-}
-section.contact ul.list-social li.social-github a:hover {
-  background-color: #0d95e8;
-}
 
-section.contact ul.list-social li.social-instagram a {
-  background-color: #1da1f2;
-}
-section.contact ul.list-social li.social-instagram a:hover {
-  background-color: #0d95e8;
-}
-
-section.contact ul.list-social li.social-whatsapp a {
-  background-color: #1da1f2;
-}
-section.contact ul.list-social li.social-whatsapp a:hover {
-  background-color: #0d95e8;
-  opacity: 0.4;
-}
-
-section.contact ul.list-social li.social-email a {
-  background-color: #1da1f2;
-}
-section.contact ul.list-social li.social-email a:hover {
-  background-color: #0d95e8;
-}
 
 
 

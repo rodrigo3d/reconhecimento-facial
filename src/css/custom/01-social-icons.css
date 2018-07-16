@@ -1,0 +1,51 @@
+
+section.contact ul.list-social li.social-github a {
+  border: 1px solid #222;
+  color: #222;
+}
+section.contact ul.list-social li.social-github a:hover {
+  background-color: #222222;
+  color: #fff;
+  border: 1px solid transparent;
+}
+
+section.contact ul.list-social li.social-twitter a {
+  background-color: transparent;
+  border: 1px solid #222;
+  color: #222;
+}
+section.contact ul.list-social li.social-twitter a:hover {
+  background-color: #222222;
+  color: #fff;
+  border: 1px solid transparent;
+}
+
+section.contact ul.list-social li.social-instagram a {
+  border: 1px solid #222;
+  color: #222;
+}
+section.contact ul.list-social li.social-instagram a:hover {
+  background-color: #222222;
+  color: #fff;
+  border: 1px solid transparent;
+}
+
+section.contact ul.list-social li.social-whatsapp a {
+  border: 1px solid #222;
+  color: #222;
+}
+section.contact ul.list-social li.social-whatsapp a:hover {
+  background-color: #222222;
+  color: #fff;
+  border: 1px solid transparent;
+}
+
+section.contact ul.list-social li.social-email a {
+  border: 1px solid #222;
+  color: #222;
+}
+section.contact ul.list-social li.social-email a:hover {
+  background-color: #222222;
+  color: #fff;
+  border: 1px solid transparent;
+}
