@@ -68,8 +68,15 @@ gulp.task('img:minify', function() {
   .pipe(browserSync.stream())
   .pipe(gulp.dest('./_site/assets/img/'));
 });
+// Gulp task to minify image files
+gulp.task('img:screenshot', function() {
+  return gulp.src(['./screenshot.png'])
+  .pipe(imagemin({optimizationLevel: 5, progressive: true, interlaced: true}))
+  .pipe(browserSync.stream())
+  .pipe(gulp.dest('./_site/'));
+});
 // IMAGES
-gulp.task('img', ['img:minify']);
+gulp.task('img', ['img:minify', 'img:screenshot']);
 
 
 // Gulp task to compile and minify html files
