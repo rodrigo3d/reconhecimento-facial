@@ -1,3 +1,6 @@
+.list-social li {
+  padding-left: 12px;
+}
 
 section.contact ul.list-social li.social-github a {
   border: 1px solid #222;

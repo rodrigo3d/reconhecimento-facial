@@ -8,7 +8,6 @@ var del           = require('del');
 var cleanCSS      = require('gulp-clean-css');
 var concat        = require('gulp-concat');
 var header        = require('gulp-header');
-var htmlmin       = require('gulp-htmlmin');
 var imagemin      = require('gulp-imagemin');
 var rename        = require("gulp-rename");
 var template      = require('gulp-template');
@@ -82,11 +81,6 @@ gulp.task('html:compile', function() {
   }))
   .pipe(gulp.dest('./_site/'));
 });
-gulp.task('html:minify', function() {
-  gulp.src('index.html')
-  .pipe(htmlmin({collapseWhitespace: true}))
-  .pipe(gulp.dest('./_site/'));
-});
 gulp.task('html', ['html:compile']);
 
 
@@ -154,8 +148,8 @@ gulp.task('clean', function () {
 gulp.task('watch', function () {
   gulp.watch('./src/css/**/*.css', ['css:theme', 'css:custom']);
   gulp.watch('./src/js/*.js', ['js']);
+  gulp.watch('./*.html', ['html:compile']);
   gulp.watch('./*.html', browserSync.reload);
-  gulp.watch('./_site/**/.html', browserSync.reload);
 });
 
 // Gulp task to default all files
@@ -177,6 +171,7 @@ gulp.task('build', ['clean'], function () {
     'css',
     'js',
     'img',
+    'html',
     'vendor'
     );
 });

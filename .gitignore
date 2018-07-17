@@ -9,7 +9,6 @@
 # production
 /_site
 /_drafts
-assets/**
 
 # misc
 .DS_Store
