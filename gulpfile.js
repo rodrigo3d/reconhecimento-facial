@@ -17,9 +17,9 @@ var runSequence   = require('run-sequence');
 var pkg           = require('./package.json');
 // Set the banner content
 var banner = ['/*!\n',
-' * Start Bootstrap - <%= pkg.title %> v<%= pkg.version %> (<%= pkg.homepage %>)\n',
-' * Copyright 2013-' + (new Date()).getFullYear(), ' <%= pkg.author %>\n',
-' * Licensed under <%= pkg.license %> (https://github.com/BlackrockDigital/<%= pkg.name %>/blob/master/LICENSE)\n',
+' * RODRIGO3D.COM - <%= pkg.title %> v<%= pkg.version %> (<%= pkg.homepage %>)\n',
+' * Copyright 2013-' + (new Date()).getFullYear(), ' <%= pkg.author.name %>\n',
+' * Licensed under <%= pkg.license %> (https://github.com/rodrigo3d/<%= pkg.name %>/blob/master/LICENSE)\n',
 ' */\n',
 ''
 ].join('');
